@@ -8,10 +8,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "Application_To_The_Moon"
-  env: "Applicationtothemoon-env"
+  app: "Application_To_The_Moon2"
+  env: "Applicationtothemoon2-env"
   bucket_name: "elasticbeanstalk-us-east-2-709394053076"
-  bucket_path: "Application_To_The_Moon"
+  bucket_path: "Application_To_The_Moon2"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
