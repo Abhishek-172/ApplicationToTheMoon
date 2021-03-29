@@ -5,3 +5,15 @@ before_install:
   - docker build -t abhishek172/reactapplication -f Dockerfile.dev .
 script:
   - docker run abhishek172/reactapplication npm run test -- --coverage
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "Application_To_The_Moon"
+  env: "Applicationtothemoon-env"
+  bucket_name: "elasticbeanstalk-us-east-2-709394053076"
+  bucket_path: "Application_To_The_Moon"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
